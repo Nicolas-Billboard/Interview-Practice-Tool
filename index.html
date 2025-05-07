@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Interview Practice Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nic's Design Interview Practice Tool</h1>
+            <p class="subtitle">Practice your design interview skills with role-specific questions</p>
+        </header>
+
+        <!-- New tabs navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="practice">Practice</button>
+            <button class="tab-btn" data-tab="tips">Interview Tips</button>
+        </div>
+
+        <!-- Practice Tab Content -->
+        <div class="tab-content active" id="practice-tab">
+            <div class="controls">
+                <div class="role-selector">
+                    <label for="role">Select Role:</label>
+                    <select id="role">
+                        <option value="ux-ui">UX/UI Designer</option>
+                        <option value="product">Product Designer</option>
+                        <option value="graphic">Graphic Designer</option>
+                        <option value="social">Social Media Manager</option>
+                        <option value="creative">Creative Director</option>
+                    </select>
+                </div>
+                
+                <div class="setting-selector">
+                    <label for="setting">Interview Setting:</label>
+                    <select id="setting">
+                        <option value="startup">Startup (Fast-paced, Creative)</option>
+                        <option value="agency">Agency (Polished, Collaborative)</option>
+                        <option value="corporate">Corporate (Structured, Formal)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- New floating timer container -->
+            <div class="floating-timer">
+                <div class="timer-controls">
+                    <div class="timer-buttons">
+                        <button data-time="60" class="timer-btn">1 min</button>
+                        <button data-time="180" class="timer-btn">3 min</button>
+                        <button data-time="300" class="timer-btn">5 min</button>
+                    </div>
+                    <div class="timer-display">
+                        <span id="minutes">00</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interview-area">
+                <div class="question-container">
+                    <h2>Question:</h2>
+                    <p id="current-question">Select a role to begin</p>
+                </div>
+                
+                <div class="answer-container">
+                    <h2>Your Answer:</h2>
+                    <textarea id="answer-input" placeholder="Type your answer here..."></textarea>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button id="next-question" class="primary-btn">Next Question</button>
+                <button id="reset-timer" class="secondary-btn">Reset Timer</button>
+            </div>
+
+            <div class="history-section">
+                <h2>Interview History</h2>
+                <div class="history-controls">
+                    <button id="clear-history" class="secondary-btn">Clear History</button>
+                    <button id="toggle-history" class="secondary-btn">Show/Hide History</button>
+                </div>
+                <div id="history-container" class="history-container">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Interview Tips Tab Content -->
+        <div class="tab-content" id="tips-tab">
+            <div class="tips-container">
+                <section class="tip-section">
+                    <h2>General Interview Tips</h2>
+                    <ul>
+                        <li>Research the company and role thoroughly before the interview</li>
+                        <li>Prepare your portfolio and be ready to discuss specific projects</li>
+                        <li>Practice your answers to common questions</li>
+                        <li>Prepare questions to ask the interviewer</li>
+                        <li>Dress appropriately for the company culture</li>
+                    </ul>
+                </section>
+
+                <section class="tip-section">
+                    <h2>Answering Behavioral Questions</h2>
+                    <div class="star-method">
+                        <h3>STAR Method</h3>
+                        <ul>
+                            <li><strong>Situation:</strong> Describe the context and background</li>
+                            <li><strong>Task:</strong> Explain the challenge or goal</li>
+                            <li><strong>Action:</strong> Detail the steps you took</li>
+                            <li><strong>Result:</strong> Share the outcomes and learnings</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="tip-section">
+                    <h2>Portfolio Presentation Tips</h2>
+                    <ul>
+                        <li>Focus on your process, not just the final result</li>
+                        <li>Highlight your role and contributions</li>
+                        <li>Include both successes and challenges</li>
+                        <li>Be ready to discuss design decisions</li>
+                        <li>Show your problem-solving approach</li>
+                    </ul>
+                </section>
+
+                <section class="tip-section">
+                    <h2>Common Pitfalls to Avoid</h2>
+                    <ul>
+                        <li>Being too vague in your answers</li>
+                        <li>Not providing specific examples</li>
+                        <li>Focusing too much on tools rather than process</li>
+                        <li>Not asking questions about the role/company</li>
+                        <li>Being unprepared for technical questions</li>
+                    </ul>
+                </section>
+
+                <section class="tip-section">
+                    <h2>Questions to Ask Interviewers</h2>
+                    <ul>
+                        <li>What does success look like in this role?</li>
+                        <li>How does the design team collaborate with other departments?</li>
+                        <li>What are the biggest challenges the team is facing?</li>
+                        <li>How does the company support professional development?</li>
+                        <li>What's the design process like at the company?</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert" class="custom-alert">
+        <div class="alert-content">
+            <h3>Time's Up!</h3>
+            <p>Your time for this question has ended.</p>
+            <button id="alert-close" class="primary-btn">Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
